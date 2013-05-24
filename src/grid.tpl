@@ -58,7 +58,7 @@
         <i class="{{#if hasPrev}}icon-grid-page-prev{{else}}icon-grid-page-prev-disabled{{/if}}" data-role="prev"></i>
         <i class="toolbar-separator"></i>
         <span class="toolbar-text">当前第</span>
-        <input style="width:40px;" type="text" data-role="num">
+        <input class="input" style="width:40px;" type="text" data-role="num">
         <span class="toolbar-text">/{{pageNumbers}}页</span>
         <i class="toolbar-separator"></i>
         <i class="{{#if hasNext}}icon-grid-page-next{{else}}icon-grid-page-next-disabled{{/if}}" data-role="next"></i>

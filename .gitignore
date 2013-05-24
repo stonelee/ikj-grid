@@ -1,2 +1,3 @@
-_site
-sea-modules
+_site/*
+sea-modules/*
+.cache/*
