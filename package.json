@@ -1,6 +1,6 @@
 {
   "name": "grid",
-  "family": "kjui",
+  "family": "kj",
   "version": "1.3.0",
   "description": "提供了表格展示功能，可以分页，点击，排序",
   "keywords": ["widget"],
@@ -15,7 +15,9 @@
   },
   "spm": {
     "alias": {
-      "$": "$",
+      "$": "jquery/jquery/1.10.1/jquery",
+      "seajs": "seajs/seajs/2.0.0/sea",
+
       "widget": "arale/widget/1.0.3/widget",
       "templatable": "arale/widget/1.0.3/templatable",
       "handlebars": "gallery/handlebars/1.0.0/handlebars",
