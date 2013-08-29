@@ -54,6 +54,10 @@
   _width: 100%;
   @extend %fix-table;
 
+  color: #707070;
+  background: #f2f2f2;
+  @include background(linear-gradient(top, #f8f8f8,#ececec));
+
   .grid-cell {
     text-align: center;
     font-weight: bold;
@@ -62,12 +66,6 @@
 
   table {
     height: 40px;
-  }
-
-  tbody tr {
-    color: #707070;
-    background: #f2f2f2;
-    @include background(linear-gradient(top, #f8f8f8,#ececec));
   }
 }
 .grid-bd {
@@ -131,7 +129,6 @@
   font-family: FontAwesome;
   font-size: 13px;
   font-weight: normal;
-  float: right;
   margin-right: 4px;
   position: relative;
 }
@@ -240,6 +237,6 @@
 .panel-mod {
   width: 100%!important;
 }
-.grid-cell:last-child {
+.grid-view .grid-cell:last-child {
   border-right: 0;
 }
