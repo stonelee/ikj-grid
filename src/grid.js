@@ -6,6 +6,7 @@ define(function(require, exports, module) {
     _ = require('underscore');
 
   function getScrollbarWidth() {
+    //仅适用于桌面浏览器,手机浏览器结果为0,但是恰好其默认不会显示滚动条,所以刚好可用
     var parent = $('<div style="width:50px;height:50px;overflow:auto"><div/></div>').appendTo('body');
     var child = parent.children();
     var width = child.innerWidth() - child.height(99).innerWidth();
