@@ -1,3 +1,4 @@
+spm build
 
 RESOURCE=~/works/ace/src/main/webapp/WEB-INF/resources
 

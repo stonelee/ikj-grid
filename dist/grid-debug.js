@@ -109,20 +109,6 @@ define("kj/grid/1.4.0/grid-debug", [ "jquery/jquery/1.10.1/jquery-debug", "arale
                 this.model.isLong = true;
                 scrollWidth = 0;
             }
-            //如果没有设置width则平均分配宽度
-            var remainWidth = this.model.width - specWidth - scrollWidth;
-            if (this.model.needCheckbox) {
-                remainWidth = remainWidth - this.model.checkboxWidth;
-            }
-            if (this.model.needOrder) {
-                remainWidth = remainWidth - this.model.orderWidth;
-            }
-            var averageWidth = remainWidth / (fields.length - specNum);
-            for (var i = fields.length - 1; i >= 0; i--) {
-                if (!fields[i].width) {
-                    fields[i].width = averageWidth;
-                }
-            }
             return fields;
         },
         templateHelpers: {
@@ -240,6 +226,19 @@ define("kj/grid/1.4.0/grid-debug", [ "jquery/jquery/1.10.1/jquery-debug", "arale
             this.$("i").click(function(e) {
                 if (/disabled/.test(e.target.className)) {
                     e.stopImmediatePropagation();
+                }
+            });
+            //TODO:复杂表头会出现问题
+            $.each(this.model.fields, function(index, field) {
+                if (field.phone === false) {
+                    index += 1;
+                    self.$("tr td:nth-child(" + index + ")").addClass("hidden-phone");
+                    self.$("tr th:nth-child(" + index + ")").addClass("hidden-phone");
+                }
+                if (field.tablet === false) {
+                    index += 1;
+                    self.$("tr td:nth-child(" + index + ")").addClass("hidden-phone hidden-tablet");
+                    self.$("tr th:nth-child(" + index + ")").addClass("hidden-phone hidden-tablet");
                 }
             });
             this.trigger("loaded");
