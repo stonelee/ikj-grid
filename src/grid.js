@@ -57,7 +57,6 @@ define(function(require, exports, module) {
       });
       this.model.headers = this._processHeaders();
       this.model.fields = this._processFields();
-      this.model.scrollWidth = getScrollbarWidth();
 
       Grid.superclass.parseElement.call(this);
     },
@@ -287,6 +286,12 @@ define(function(require, exports, module) {
         }
       });
 
+      //如果采用动态添加删除th的方法,会导致IE8中table自动分配宽度出现问题,因此采用更改属性的方法
+      if (this.$('.grid-view').innerHeight() < this.$('.grid-view table').innerHeight()) {
+        this.$('.grid-hd th[data-role=scroll]').css('width', getScrollbarWidth());
+      } else {
+        this.$('.grid-hd th[data-role=scroll]').css('width', 0);
+      }
 
       //TODO:复杂表头会出现问题
       $.each(this.model.fields, function(index, field) {
