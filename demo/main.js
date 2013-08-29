@@ -8,9 +8,11 @@ seajs.use(['$', '../src/grid'], function($, Grid) {
     }, {
       header: '验票站名称',
       name: 'stationName',
+      phone: false,
       width: 150
     }, {
       header: '车牌号',
+      tablet: false,
       name: 'licensePlateNumber',
       width: 80
     }, {
