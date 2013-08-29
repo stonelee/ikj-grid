@@ -1,4 +1,4 @@
-define("kj/grid/1.4.0/grid-debug", [ "jquery/jquery/1.10.1/jquery-debug", "arale/widget/1.0.3/widget-debug", "$-debug", "arale/base/1.0.1/base-debug", "arale/class/1.0.0/class-debug", "arale/events/1.0.0/events-debug", "arale/widget/1.0.3/templatable-debug", "gallery/handlebars/1.0.0/handlebars-debug", "gallery/underscore/1.4.4/underscore-debug", "./loading-debug", "./loading-debug.tpl", "./grid-debug.tpl", "./extraHeaderTd-debug.tpl", "./headerTd-debug.tpl", "./body-debug.tpl" ], function(require, exports, module) {
+define("kj/grid/1.4.0/grid-debug", [ "jquery/jquery/1.10.1/jquery-debug", "arale/widget/1.0.3/widget-debug", "$-debug", "arale/base/1.0.1/base-debug", "arale/class/1.0.0/class-debug", "arale/events/1.0.0/events-debug", "arale/widget/1.0.3/templatable-debug", "gallery/handlebars/1.0.0/handlebars-debug", "gallery/underscore/1.4.4/underscore-debug", "./grid-debug.tpl", "./extraHeaderTd-debug.tpl", "./headerTd-debug.tpl", "./body-debug.tpl" ], function(require, exports, module) {
     var $ = require("jquery/jquery/1.10.1/jquery-debug"), Widget = require("arale/widget/1.0.3/widget-debug"), Templatable = require("arale/widget/1.0.3/templatable-debug"), Handlebars = require("gallery/handlebars/1.0.0/handlebars-debug"), _ = require("gallery/underscore/1.4.4/underscore-debug");
     function getScrollbarWidth() {
         //仅适用于桌面浏览器,手机浏览器结果为0,但是恰好其默认不会显示滚动条,所以刚好可用
@@ -8,7 +8,6 @@ define("kj/grid/1.4.0/grid-debug", [ "jquery/jquery/1.10.1/jquery-debug", "arale
         parent.remove();
         return width;
     }
-    var Loading = require("./loading-debug");
     var Grid = Widget.extend({
         Implements: Templatable,
         attrs: {
@@ -242,15 +241,25 @@ define("kj/grid/1.4.0/grid-debug", [ "jquery/jquery/1.10.1/jquery-debug", "arale
             } else {
                 this.$(".grid-hd th[data-role=scroll]").css("width", 0);
             }
+            function calIndex(index) {
+                if (self.model.needCheckbox) {
+                    index++;
+                }
+                if (self.model.needOrder) {
+                    index++;
+                }
+                index++;
+                return index;
+            }
             //TODO:复杂表头会出现问题
             $.each(this.model.fields, function(index, field) {
                 if (field.phone === false) {
-                    index += 1;
+                    index = calIndex(index);
                     self.$("tr td:nth-child(" + index + ")").addClass("hidden-phone");
                     self.$("tr th:nth-child(" + index + ")").addClass("hidden-phone");
                 }
                 if (field.tablet === false) {
-                    index += 1;
+                    index = calIndex(index);
                     self.$("tr td:nth-child(" + index + ")").addClass("hidden-phone hidden-tablet");
                     self.$("tr th:nth-child(" + index + ")").addClass("hidden-phone hidden-tablet");
                 }
@@ -404,39 +413,17 @@ define("kj/grid/1.4.0/grid-debug", [ "jquery/jquery/1.10.1/jquery-debug", "arale
         },
         showLoading: function() {
             if (this.loading) {
-                this.loading.element.show();
+                this.loading.show();
             } else {
-                this.loading = new Loading({
-                    parentNode: this.$(".grid-bd"),
-                    model: {
-                        left: (this.model.width - 106) / 2,
-                        top: (this.model.height - 36) / 2
-                    }
-                }).render();
+                this.loading = $('<div class="loading"><span><i class="icon-refresh icon-spin"></i>加载中...</span></div>').appendTo(this.$(".grid-bd"));
             }
         },
         hideLoading: function() {
-            this.loading.element.hide();
+            this.loading.hide();
         }
     });
     module.exports = Grid;
 });
-
-define("kj/grid/1.4.0/loading-debug", [ "jquery/jquery/1.10.1/jquery-debug", "arale/widget/1.0.3/widget-debug", "$-debug", "arale/base/1.0.1/base-debug", "arale/class/1.0.0/class-debug", "arale/events/1.0.0/events-debug", "arale/widget/1.0.3/templatable-debug", "gallery/handlebars/1.0.0/handlebars-debug" ], function(require, exports, module) {
-    var $ = require("jquery/jquery/1.10.1/jquery-debug"), Widget = require("arale/widget/1.0.3/widget-debug"), Templatable = require("arale/widget/1.0.3/templatable-debug");
-    var Loading = Widget.extend({
-        Implements: Templatable,
-        template: require("kj/grid/1.4.0/loading-debug.tpl"),
-        model: {
-            left: 0,
-            top: 0,
-            content: "加载中..."
-        }
-    });
-    module.exports = Loading;
-});
-
-define("kj/grid/1.4.0/loading-debug.tpl", [], '<div class="mask">\n  <div class="mask-bg"></div>\n  <div class="mask-msg" style="left:{{left}}px;top:{{top}}px;">\n    <div class="loading">{{content}}</div>\n  </div>\n</div>\n');
 
 define("kj/grid/1.4.0/grid-debug.tpl", [], '<div class="panel-mod" style="width:{{width}}px;">\n  {{#if title}}\n  <div class="panel-hd">\n    <span>{{title}}</span>\n  </div>\n  {{/if}}\n  <div class="panel-bd">\n\n    <div class="grid-hd">\n      <table>\n        <thead>\n          <tr>\n            {{#if needCheckbox}}\n              <th style="width:{{checkboxWidth}}px;"></th>\n            {{/if}}\n            {{#if needOrder}}\n              <th style="width:{{orderWidth}}px;"></th>\n            {{/if}}\n            {{#each fields}}\n              <th style="width:{{width}}px;"></th>\n            {{/each}}\n            <th data-role=scroll style="width:0;"></th>\n          </tr>\n        </thead>\n        <tbody>\n          {{createHeader headers}}\n        </tbody>\n      </table>\n    </div>\n\n    <div class="grid-bd" style="height:{{height}}px;">\n      <div class="grid-view"{{#unless isLong}} style="_overflow-x:hidden;"{{/unless}}>\n        <table>\n          <thead>\n            <tr>\n              {{#if needCheckbox}}\n                <th style="width:{{checkboxWidth}}px;"></th>\n              {{/if}}\n              {{#if needOrder}}\n                <th style="width:{{orderWidth}}px;"></th>\n              {{/if}}\n              {{#each fields}}\n                <th style="width:{{width}}px;"></th>\n              {{/each}}\n            </tr>\n          </thead>\n          <tbody></tbody>\n        </table>\n      </div>\n    </div>\n\n    {{#if paginate}}\n      <div class="toolbar-ft">\n        <span class="toolbar-text-right">共{{totalCount}}条记录，每页{{pageSize}}条</span>\n        <i class="{{#if isFirst}}icon-grid-page-first-disabled{{else}}icon-grid-page-first{{/if}}" data-role="first"></i>\n        <i class="{{#if hasPrev}}icon-grid-page-prev{{else}}icon-grid-page-prev-disabled{{/if}}" data-role="prev"></i>\n        <i class="toolbar-separator"></i>\n        <span class="toolbar-text">当前第</span>\n        <input class="input" style="width:40px;" type="text" data-role="num">\n        <span class="toolbar-text">/{{pageNumbers}}页</span>\n        <i class="toolbar-separator"></i>\n        <i class="{{#if hasNext}}icon-grid-page-next{{else}}icon-grid-page-next-disabled{{/if}}" data-role="next"></i>\n        <i class="{{#if isLast}}icon-grid-page-last-disabled{{else}}icon-grid-page-last{{/if}}" data-role="last"></i>\n        <i class="toolbar-separator"></i>\n        <i class="icon-grid-refresh" data-role="refresh"></i>\n      </div>\n    {{/if}}\n  </div>\n</div>\n');
 
