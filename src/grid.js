@@ -5,6 +5,14 @@ define(function(require, exports, module) {
     Handlebars = require('handlebars'),
     _ = require('underscore');
 
+  function getScrollbarWidth() {
+    var parent = $('<div style="width:50px;height:50px;overflow:auto"><div/></div>').appendTo('body');
+    var child = parent.children();
+    var width = child.innerWidth() - child.height(99).innerWidth();
+    parent.remove();
+    return width;
+  }
+
   var Loading = require('./loading');
 
   var Grid = Widget.extend({
@@ -48,6 +56,7 @@ define(function(require, exports, module) {
       });
       this.model.headers = this._processHeaders();
       this.model.fields = this._processFields();
+      this.model.scrollWidth = getScrollbarWidth();
 
       Grid.superclass.parseElement.call(this);
     },

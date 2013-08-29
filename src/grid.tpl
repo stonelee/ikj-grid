@@ -19,7 +19,7 @@
             {{#each fields}}
               <th style="width:{{width}}px;"></th>
             {{/each}}
-            <th style="width:18px;"></th>
+            <th style="width:{{scrollWidth}}px;"></th>
           </tr>
         </thead>
         <tbody>
