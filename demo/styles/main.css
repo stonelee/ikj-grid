@@ -275,3 +275,14 @@
   border: 1px solid #c9d4db;
   margin: 4px;
 }
+
+/*responsive*/
+/* line 240, ../sass/main.scss */
+.panel-mod {
+  width: 100%!important;
+}
+
+/* line 243, ../sass/main.scss */
+.grid-cell:last-child {
+  border-right: 0;
+}

@@ -235,3 +235,11 @@
   border: 1px solid #c9d4db;
   margin: 4px;
 }
+
+/*responsive*/
+.panel-mod {
+  width: 100%!important;
+}
+.grid-cell:last-child {
+  border-right: 0;
+}

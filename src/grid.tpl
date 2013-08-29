@@ -20,7 +20,6 @@
               <th style="width:{{width}}px;"></th>
             {{/each}}
             <th style="width:18px;"></th>
-            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -43,7 +42,6 @@
               {{#each fields}}
                 <th style="width:{{width}}px;"></th>
               {{/each}}
-              <th></th>
             </tr>
           </thead>
           <tbody></tbody>
