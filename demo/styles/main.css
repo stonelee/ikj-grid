@@ -282,3 +282,35 @@
 .grid-view .grid-cell:last-child {
   border-right: 0;
 }
+
+/*loading*/
+/* line 245, ../sass/main.scss */
+.loading {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+  opacity: 0.9;
+  z-index: 100;
+}
+/* line 255, ../sass/main.scss */
+.loading span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 20px;
+  margin-left: -40px;
+  margin-top: -40px;
+  padding: 10px 0;
+  color: #3a87ad;
+  line-height: 20px;
+  border: 1px solid;
+  text-align: center;
+}
+/* line 271, ../sass/main.scss */
+.loading span i {
+  margin-right: 5px;
+}

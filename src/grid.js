@@ -14,8 +14,6 @@ define(function(require, exports, module) {
     return width;
   }
 
-  var Loading = require('./loading');
-
   var Grid = Widget.extend({
     Implements: Templatable,
 
@@ -474,19 +472,13 @@ define(function(require, exports, module) {
 
     showLoading: function() {
       if (this.loading) {
-        this.loading.element.show();
+        this.loading.show();
       } else {
-        this.loading = new Loading({
-          parentNode: this.$('.grid-bd'),
-          model: {
-            left: (this.model.width - 106) / 2,
-            top: (this.model.height - 36) / 2
-          }
-        }).render();
+        this.loading = $('<div class="loading"><span><i class="icon-refresh icon-spin"></i>加载中...</span></div>').appendTo(this.$('.grid-bd'));
       }
     },
     hideLoading: function() {
-      this.loading.element.hide();
+      this.loading.hide();
     }
 
   });
