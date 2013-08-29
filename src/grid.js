@@ -291,15 +291,26 @@ define(function(require, exports, module) {
         this.$('.grid-hd th[data-role=scroll]').css('width', 0);
       }
 
+
+      function calIndex(index) {
+        if (self.model.needCheckbox) {
+          index++;
+        }
+        if (self.model.needOrder) {
+          index++;
+        }
+        index++;
+        return index;
+      }
       //TODO:复杂表头会出现问题
       $.each(this.model.fields, function(index, field) {
         if (field.phone === false) {
-          index += 1;
+          index = calIndex(index);
           self.$('tr td:nth-child(' + index + ')').addClass('hidden-phone');
           self.$('tr th:nth-child(' + index + ')').addClass('hidden-phone');
         }
         if (field.tablet === false) {
-          index += 1;
+          index = calIndex(index);
           self.$('tr td:nth-child(' + index + ')').addClass('hidden-phone hidden-tablet');
           self.$('tr th:nth-child(' + index + ')').addClass('hidden-phone hidden-tablet');
         }

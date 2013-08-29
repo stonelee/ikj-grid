@@ -6,12 +6,12 @@ seajs.use(['$', '../src/grid'], function($, Grid) {
       align: 'center',
       sort: true
     }, {
-      header: '验票站名称',
+      header: 'phone隐藏',
       name: 'stationName',
       phone: false,
       width: 150
     }, {
-      header: '车牌号',
+      header: 'tablet隐藏',
       tablet: false,
       name: 'licensePlateNumber',
       width: 80
@@ -38,7 +38,7 @@ seajs.use(['$', '../src/grid'], function($, Grid) {
     urlParser: /(grid_)\d+(.*)/,
     model: {
       fields: fields,
-      title: 'title',
+      title: '响应式表格',
       height: 190
     },
     onClick: function(target, data) {
@@ -48,6 +48,28 @@ seajs.use(['$', '../src/grid'], function($, Grid) {
     },
     onSort: function(name, direction) {
       alert(name + ' ' + direction);
+    }
+  }).render();
+
+  new Grid({
+    url: './grid_1.json',
+    urlParser: /(grid_)\d+(.*)/,
+    model: {
+      fields: fields,
+      title: '序号+多选',
+      needCheckbox: true,
+      needOrder: true
+    },
+    onLoaded: function() {
+      var self = this;
+      var $ft = this.$('.toolbar-ft');
+      var $btnSelected = $('<div class="btn btn-small">').html('已选择').appendTo($ft);
+      $btnSelected.click(function() {
+        var ids = $.map(self.selected, function($row) {
+          return $row.data('data').id;
+        });
+        console.log(ids);
+      });
     }
   }).render();
 
@@ -114,7 +136,7 @@ seajs.use(['$', '../src/grid'], function($, Grid) {
     urlParser: /(grid_)\d+(.*)/,
     model: {
       fields: fields2,
-      title: 'title',
+      title: '复杂表头',
       height: 190
     }
   }).render();
