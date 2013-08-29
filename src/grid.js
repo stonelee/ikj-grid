@@ -135,22 +135,6 @@ define(function(require, exports, module) {
         scrollWidth = 0;
       }
 
-      //如果没有设置width则平均分配宽度
-      var remainWidth = this.model.width - specWidth - scrollWidth;
-      if (this.model.needCheckbox) {
-        remainWidth = remainWidth - this.model.checkboxWidth;
-      }
-      if (this.model.needOrder) {
-        remainWidth = remainWidth - this.model.orderWidth;
-      }
-      var averageWidth = remainWidth / (fields.length - specNum);
-
-      for (var i = fields.length - 1; i >= 0; i--) {
-        if (!fields[i].width) {
-          fields[i].width = averageWidth;
-        }
-      }
-
       return fields;
     },
 
