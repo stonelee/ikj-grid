@@ -4,6 +4,8 @@
 
 用于ace,提供了表格展示功能，可以分页，点击，排序
 
+演示地址:http://stonelee.info/ace-grid/demo/
+
 ---
 
 
