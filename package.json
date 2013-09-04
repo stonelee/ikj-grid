@@ -5,13 +5,13 @@
   "description": "提供了表格展示功能，可以分页，点击，排序",
   "keywords": ["widget"],
   "author": "Stone Lee <istonelee@gmail.com> (http://stonelee.info)",
-  "homepage": "http://stonelee.info/kjui-grid",
+  "homepage": "http://stonelee.info/ace-grid/demo/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/stonelee/kjui-grid.git"
+    "url": "https://github.com/stonelee/ace-grid.git"
   },
   "bugs": {
-    "url": "https://github.com/stonelee/kjui-grid/issues"
+    "url": "https://github.com/stonelee/ace-grid/issues"
   },
   "spm": {
     "alias": {
@@ -23,6 +23,6 @@
       "handlebars": "gallery/handlebars/1.0.0/handlebars",
       "underscore": "gallery/underscore/1.4.4/underscore"
     },
-    "output": ["grid.js"]
+    "output": ["grid.js", "grid.css"]
   }
 }
