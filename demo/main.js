@@ -140,4 +140,28 @@ seajs.use(['$', '../src/grid'], function($, Grid) {
       height: 190
     }
   }).render();
+
+  var fields3 = [{
+      header: '编号',
+      name: 'id',
+      align: 'center'
+    }, {
+      header: 'name',
+      name: 'data',
+      width: 80,
+      render: function(value) {
+        return value.name;
+      }
+    }
+  ];
+
+  new Grid({
+    url: 'bug.json',
+    urlParser: /(grid_)\d+(.*)/,
+    model: {
+      fields: fields3,
+      title: 'bug测试',
+      height: 190
+    }
+  }).render();
 });
