@@ -1,6 +1,6 @@
 {
   "name": "grid",
-  "family": "kj",
+  "family": "ikj",
   "version": "1.4.0",
   "description": "提供了表格展示功能，可以分页，点击，排序",
   "keywords": ["widget"],

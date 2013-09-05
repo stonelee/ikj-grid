@@ -4,6 +4,7 @@ define(function(require, exports, module) {
     Templatable = require('templatable'),
     Handlebars = require('handlebars'),
     _ = require('underscore');
+  require('./grid.css');
 
   function getScrollbarWidth() {
     //仅适用于桌面浏览器,手机浏览器结果为0,但是恰好其默认不会显示滚动条,所以刚好可用
