@@ -182,7 +182,10 @@ define("ikj/grid/1.4.0/grid-debug", [ "jquery/jquery/1.10.1/jquery-debug", "aral
                     order: order,
                     values: $.map(self.model.fields, function(field) {
                         var value = record[field.name];
-                        value = _.escape(value);
+                        //_.escape会将object转为[object Object]
+                        if (typeof value == "string") {
+                            value = _.escape(value);
+                        }
                         if ($.isFunction(field.render)) {
                             value = field.render(value);
                         }

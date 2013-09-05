@@ -222,7 +222,7 @@ define(function(require, exports, module) {
           values: $.map(self.model.fields, function(field) {
             var value = record[field.name];
             //_.escape会将object转为[object Object]
-            if (!$.isPlainObject(value)) {
+            if (typeof value == 'string') {
               value = _.escape(value);
             }
 
