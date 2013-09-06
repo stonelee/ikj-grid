@@ -60,7 +60,7 @@
 }
 /* line 66, sass/grid.scss */
 .grid-hd table {
-  height: 40px;
+  height: 30px;
 }
 
 /* line 70, sass/grid.scss */
@@ -161,9 +161,9 @@
 /*icon*/
 /* line 156, sass/grid.scss */
 .icon-grid-page-first, .icon-grid-page-last, .icon-grid-page-next, .icon-grid-page-prev {
-  width: 22px;
-  height: 22px;
-  line-height: 22px;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
   text-align: center;
   margin: 0 2px;
   border-radius: 100%;
@@ -184,9 +184,9 @@
 
 /* line 173, sass/grid.scss */
 .icon-grid-page-first-disabled, .icon-grid-page-last-disabled, .icon-grid-page-next-disabled, .icon-grid-page-prev-disabled {
-  width: 22px;
-  height: 22px;
-  line-height: 22px;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
   text-align: center;
   margin: 0 2px;
   border-radius: 100%;
@@ -217,9 +217,9 @@
 
 /* line 196, sass/grid.scss */
 .icon-grid-refresh {
-  width: 22px;
-  height: 22px;
-  line-height: 22px;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
   text-align: center;
   margin: 0 2px;
   border-radius: 100%;
@@ -255,9 +255,10 @@
 /* line 219, sass/grid.scss */
 .toolbar-ft {
   padding-left: 10px;
-  line-height: 35px;
+  line-height: 32px;
+  height: 32px;
 }
-/* line 223, sass/grid.scss */
+/* line 224, sass/grid.scss */
 .toolbar-ft .input {
   height: 13px;
   display: inline-block;
@@ -265,25 +266,25 @@
   text-align: center;
 }
 
-/* line 230, sass/grid.scss */
+/* line 231, sass/grid.scss */
 .toolbar-separator {
   border: 1px solid #c9d4db;
   margin: 4px;
 }
 
 /*responsive*/
-/* line 236, sass/grid.scss */
+/* line 237, sass/grid.scss */
 .panel-mod {
   width: 100%!important;
 }
 
-/* line 239, sass/grid.scss */
+/* line 240, sass/grid.scss */
 .grid-view .grid-cell:last-child {
   border-right: 0;
 }
 
 /*loading*/
-/* line 244, sass/grid.scss */
+/* line 245, sass/grid.scss */
 .loading {
   position: absolute;
   top: 0;
@@ -294,7 +295,7 @@
   opacity: 0.9;
   z-index: 100;
 }
-/* line 254, sass/grid.scss */
+/* line 255, sass/grid.scss */
 .loading span {
   position: absolute;
   top: 50%;
@@ -309,7 +310,7 @@
   border: 1px solid;
   text-align: center;
 }
-/* line 270, sass/grid.scss */
+/* line 271, sass/grid.scss */
 .loading span i {
   margin-right: 5px;
 }

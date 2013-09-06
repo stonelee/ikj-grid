@@ -56,44 +56,43 @@
 }
 /* line 61, sass/grid.scss */
 .grid-hd .grid-cell {
-  text-align: center;
   font-weight: bold;
   border-bottom: 1px solid #ddd;
 }
-/* line 67, sass/grid.scss */
+/* line 66, sass/grid.scss */
 .grid-hd table {
-  height: 40px;
+  height: 30px;
 }
 
-/* line 71, sass/grid.scss */
+/* line 70, sass/grid.scss */
 .grid-bd {
   background: white;
 }
 
-/* line 75, sass/grid.scss */
+/* line 74, sass/grid.scss */
 .grid-view {
   overflow: auto;
   _width: 100%;
   height: 100%;
 }
 
-/* line 82, sass/grid.scss */
+/* line 81, sass/grid.scss */
 .grid-row:hover {
   background-color: #efefef;
 }
 
-/* line 85, sass/grid.scss */
+/* line 84, sass/grid.scss */
 .grid-row-alt {
   background-color: #fafafa;
 }
 
-/* line 89, sass/grid.scss */
+/* line 88, sass/grid.scss */
 .grid-row-is-selected,
 .grid-row-is-selected:hover {
   background-color: #dfe8f6;
 }
 
-/* line 93, sass/grid.scss */
+/* line 92, sass/grid.scss */
 .grid-cell {
   padding: 0 4px;
   border-width: 0 1px 1px 0;
@@ -101,29 +100,29 @@
   border-color: #c5c5c5;
 }
 
-/* line 101, sass/grid.scss */
+/* line 100, sass/grid.scss */
 .grid-mark-cell {
   background-color: #e3e4e6;
   text-align: center;
   border-bottom-style: solid;
 }
 
-/* line 106, sass/grid.scss */
+/* line 105, sass/grid.scss */
 .grid-detail-cell {
   border-right-width: 0;
 }
 
 /*sort*/
-/* line 111, sass/grid.scss */
+/* line 110, sass/grid.scss */
 .grid-is-sortable, .grid-is-desc, .grid-is-asc {
   cursor: pointer;
 }
-/* line 114, sass/grid.scss */
+/* line 113, sass/grid.scss */
 .grid-is-sortable:hover, .grid-is-desc:hover, .grid-is-asc:hover {
   color: #547ea8;
 }
 
-/* line 119, sass/grid.scss */
+/* line 118, sass/grid.scss */
 .grid-is-desc, .grid-is-asc {
   color: #307ecc;
   background-color: #eaeef4;
@@ -134,7 +133,7 @@
   background: linear-gradient(top, #eff3f8, #e3e7ed);
 }
 
-/* line 125, sass/grid.scss */
+/* line 124, sass/grid.scss */
 .grid-is-sortable:after {
   content: "\f0dc";
   display: inline-block;
@@ -146,14 +145,14 @@
   position: relative;
 }
 
-/* line 136, sass/grid.scss */
+/* line 135, sass/grid.scss */
 .grid-is-asc:after {
   content: "\f0de";
   top: 4px;
   color: #307ecc;
 }
 
-/* line 142, sass/grid.scss */
+/* line 141, sass/grid.scss */
 .grid-is-desc:after {
   content: "\f0dd";
   top: -3px;
@@ -161,11 +160,11 @@
 }
 
 /*icon*/
-/* line 157, sass/grid.scss */
+/* line 156, sass/grid.scss */
 .icon-grid-page-first, .icon-grid-page-last, .icon-grid-page-next, .icon-grid-page-prev {
-  width: 22px;
-  height: 22px;
-  line-height: 22px;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
   text-align: center;
   margin: 0 2px;
   border-radius: 100%;
@@ -174,21 +173,21 @@
   background-color: #fff;
   cursor: pointer;
 }
-/* line 164, sass/grid.scss */
+/* line 163, sass/grid.scss */
 .icon-grid-page-first:hover, .icon-grid-page-last:hover, .icon-grid-page-next:hover, .icon-grid-page-prev:hover {
   color: #699ab5;
   border-color: #699ab5;
 }
-/* line 169, sass/grid.scss */
+/* line 168, sass/grid.scss */
 .icon-grid-page-first:before, .icon-grid-page-last:before, .icon-grid-page-next:before, .icon-grid-page-prev:before {
   color: #808080;
 }
 
-/* line 174, sass/grid.scss */
+/* line 173, sass/grid.scss */
 .icon-grid-page-first-disabled, .icon-grid-page-last-disabled, .icon-grid-page-next-disabled, .icon-grid-page-prev-disabled {
-  width: 22px;
-  height: 22px;
-  line-height: 22px;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
   text-align: center;
   margin: 0 2px;
   border-radius: 100%;
@@ -197,31 +196,31 @@
   background-color: #f7f7f7;
 }
 
-/* line 181, sass/grid.scss */
+/* line 180, sass/grid.scss */
 .icon-grid-page-first:before, .icon-grid-page-first-disabled:before {
   content: "\f100";
 }
 
-/* line 185, sass/grid.scss */
+/* line 184, sass/grid.scss */
 .icon-grid-page-last:before, .icon-grid-page-last-disabled:before {
   content: "\f101";
 }
 
-/* line 189, sass/grid.scss */
+/* line 188, sass/grid.scss */
 .icon-grid-page-next:before, .icon-grid-page-next-disabled:before {
   content: "\f105";
 }
 
-/* line 193, sass/grid.scss */
+/* line 192, sass/grid.scss */
 .icon-grid-page-prev:before, .icon-grid-page-prev-disabled:before {
   content: "\f104";
 }
 
-/* line 197, sass/grid.scss */
+/* line 196, sass/grid.scss */
 .icon-grid-refresh {
-  width: 22px;
-  height: 22px;
-  line-height: 22px;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
   text-align: center;
   margin: 0 2px;
   border-radius: 100%;
@@ -232,7 +231,7 @@
   -o-transition: all, 0.12s;
   transition: all, 0.12s;
 }
-/* line 203, sass/grid.scss */
+/* line 202, sass/grid.scss */
 .icon-grid-refresh:hover {
   -webkit-transform: scale(1.2);
   -moz-transform: scale(1.2);
@@ -242,22 +241,23 @@
   opacity: 1;
 }
 
-/* line 209, sass/grid.scss */
+/* line 208, sass/grid.scss */
 .icon-grid-refresh:before {
   content: "\f021";
   color: #69aa46;
 }
 
-/* line 216, sass/grid.scss */
+/* line 215, sass/grid.scss */
 .toolbar-text-right {
   float: right;
   margin-right: 20px;
 }
 
-/* line 220, sass/grid.scss */
+/* line 219, sass/grid.scss */
 .toolbar-ft {
   padding-left: 10px;
-  line-height: 35px;
+  line-height: 32px;
+  height: 32px;
 }
 /* line 224, sass/grid.scss */
 .toolbar-ft .input {

@@ -64,7 +64,7 @@
   }
 
   table {
-    height: 40px;
+    height: 30px;
   }
 }
 .grid-bd {
@@ -146,9 +146,9 @@
 
 /*icon*/
 @mixin icon-grid (){
-  width: 22px;
-  height: 22px;
-  line-height: 22px;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
   text-align: center;
   margin: 0 2px;
   border-radius: 100%;
@@ -218,7 +218,8 @@
 }
 .toolbar-ft {
   padding-left: 10px;
-  line-height: 35px;
+  line-height: 32px;
+  height: 32px;
 
   .input {
     height: 13px;
