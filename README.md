@@ -32,7 +32,7 @@ ajax请求数据的路径
 * `header` 列名
 * `name` data中该列对应的key
 * `width` `Number` 该列宽度,如果不设则平均分配
-* `align` 对齐方式,取值为`left`,`center`,`right`
+* `align` 对齐方式(包括列名),取值为`left`,`center`,`right`
 * `phone` 如果设为false,则小屏幕时该列自动隐藏
 * `tablet` 如果设为false,则中小屏幕时该列自动隐藏
 * `render` 自定义渲染函数，参数为该单元格的值

@@ -106,6 +106,7 @@ seajs.use(['$', '../src/grid'], function($, Grid) {
               header: '毛重',
               name: 'grossWeight',
               width: 80,
+              align: 'right',
               render: function(value) {
                 return '<b>' + value + '吨</b>';
               }
