@@ -5,13 +5,13 @@
   "description": "提供了表格展示功能，可以分页，点击，排序",
   "keywords": ["widget"],
   "author": "Stone Lee <istonelee@gmail.com> (http://stonelee.info)",
-  "homepage": "http://stonelee.info/ace-grid/demo/",
+  "homepage": "http://stonelee.info/ikj-grid/demo/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/stonelee/ace-grid.git"
+    "url": "https://github.com/stonelee/ikj-grid.git"
   },
   "bugs": {
-    "url": "https://github.com/stonelee/ace-grid/issues"
+    "url": "https://github.com/stonelee/ikj-grid/issues"
   },
   "spm": {
     "alias": {
