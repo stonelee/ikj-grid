@@ -8,11 +8,11 @@ seajs.use(['$', '../src/grid'], function($, Grid) {
     }, {
       header: 'phone隐藏',
       name: 'stationName',
-      phone: false,
+      hidden: 'phone',
       width: 150
     }, {
       header: 'tablet隐藏',
-      tablet: false,
+      hidden: 'tablet',
       name: 'licensePlateNumber',
       width: 80
     }, {

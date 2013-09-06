@@ -308,12 +308,12 @@ define(function(require, exports, module) {
       }
       //TODO:复杂表头会出现问题
       $.each(this.model.fields, function(index, field) {
-        if (field.phone === false) {
+        if (field.hidden == 'phone') {
           index = calIndex(index);
           self.$('tr td:nth-child(' + index + ')').addClass('hidden-phone');
           self.$('tr th:nth-child(' + index + ')').addClass('hidden-phone');
         }
-        if (field.tablet === false) {
+        if (field.hidden == 'tablet') {
           index = calIndex(index);
           self.$('tr td:nth-child(' + index + ')').addClass('hidden-phone hidden-tablet');
           self.$('tr th:nth-child(' + index + ')').addClass('hidden-phone hidden-tablet');
