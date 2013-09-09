@@ -17,7 +17,7 @@ ajax请求数据的路径
 
 ### urlParser `RegExp`
 
-用来适配翻页url
+用来适配翻页url,内部框架不需要使用该配置
 
 ### data `Array`
 
