@@ -144,6 +144,17 @@ children: [{
 
 隐藏loading提示
 
+### selectedData `key`
+
+返回当前选择行对应的原始值
+
+如果为单选，返回的是object或者null。
+如果为多选,返回的是数组
+
+如果传递参数key,那么直接返回当前选择行该key对应的原始值.
+如果为多选,返回的是数组
+
+
 ## 事件
 
 ### click `target, data`

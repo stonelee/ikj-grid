@@ -494,6 +494,22 @@ define(function(require, exports, module) {
     },
     hideLoading: function() {
       this.loading.hide();
+    },
+
+    selectedData: function(key) {
+      if (!this.model.needCheckbox) {
+        if (this.selected) {
+          var data = this.selected.data('data');
+          return key ? data[key] : data;
+        } else {
+          return null;
+        }
+      } else {
+        return $.map(this.selected, function(selected, index) {
+          var data = selected.data('data');
+          return key ? data[key] : data;
+        });
+      }
     }
 
   });

@@ -33,7 +33,7 @@ seajs.use(['$', '../src/grid'], function($, Grid) {
     }
   ];
 
-  new Grid({
+  window.grid = new Grid({
     url: 'grid_1.json',
     urlParser: /(grid_)\d+(.*)/,
     model: {
@@ -51,7 +51,7 @@ seajs.use(['$', '../src/grid'], function($, Grid) {
     }
   }).render();
 
-  new Grid({
+  window.grid2 = new Grid({
     url: './grid_1.json',
     urlParser: /(grid_)\d+(.*)/,
     model: {
@@ -65,10 +65,7 @@ seajs.use(['$', '../src/grid'], function($, Grid) {
       var $ft = this.$('.toolbar-ft');
       var $btnSelected = $('<div class="btn btn-small">').html('已选择').appendTo($ft);
       $btnSelected.click(function() {
-        var ids = $.map(self.selected, function($row) {
-          return $row.data('data').id;
-        });
-        console.log(ids);
+        console.log(self.selectedData('id'));
       });
     }
   }).render();
