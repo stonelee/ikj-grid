@@ -489,11 +489,10 @@ define(function(require, exports, module) {
       this.gotoPage(id);
     },
     firstPage: function() {
-      var id = this.data.firstPage;
-      this.gotoPage(id);
+      this.gotoPage(1);
     },
     lastPage: function() {
-      var id = this.data.lastPage;
+      var id = this.data.totalPages;
       this.gotoPage(id);
     },
     refresh: function() {

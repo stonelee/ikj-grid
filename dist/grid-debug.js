@@ -418,11 +418,10 @@ define("ikj/grid/1.4.0/grid-debug", [ "jquery/jquery/1.10.1/jquery-debug", "aral
             this.gotoPage(id);
         },
         firstPage: function() {
-            var id = this.data.firstPage;
-            this.gotoPage(id);
+            this.gotoPage(1);
         },
         lastPage: function() {
-            var id = this.data.lastPage;
+            var id = this.data.totalPages;
             this.gotoPage(id);
         },
         refresh: function() {
