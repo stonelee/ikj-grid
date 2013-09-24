@@ -279,7 +279,11 @@ define(function(require, exports, module) {
         $checkAll.prop('checked', false);
       }
 
-      this.$('[data-role=num]').val(data.pageNumber);
+      if (data.totalCount == 0) {
+        this.$('[data-role=num]').val('');
+      } else {
+        this.$('[data-role=num]').val(data.pageNumber);
+      }
 
       //disabled button will not be clicked
       this.$('i').click(function(e) {

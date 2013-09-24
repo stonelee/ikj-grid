@@ -232,7 +232,11 @@ define("ikj/grid/1.4.0/grid-debug", [ "jquery/jquery/1.10.1/jquery-debug", "aral
                 $checkAll[0].indeterminate = false;
                 $checkAll.prop("checked", false);
             }
-            this.$("[data-role=num]").val(data.pageNumber);
+            if (data.totalCount == 0) {
+                this.$("[data-role=num]").val("");
+            } else {
+                this.$("[data-role=num]").val(data.pageNumber);
+            }
             //disabled button will not be clicked
             this.$("i").click(function(e) {
                 if (/disabled/.test(e.target.className)) {
