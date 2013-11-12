@@ -1,8 +1,10 @@
 {{#each records}}
-  <tr class="grid-row{{#if isAlt}} grid-row-alt{{/if}}">
+  <tr class="grid-row{{#if isAlt}} grid-row-alt{{/if}}"{{#if isBlank}} data-role="blank"{{/if}}>
     {{#if ../needCheckbox}}
       <td class="grid-cell grid-mark-cell">
+      {{#unless isBlank}}
         <input type="checkbox" data-role="check"/>
+      {{/unless}}
       </td>
     {{/if}}
     {{#if ../needOrder}}

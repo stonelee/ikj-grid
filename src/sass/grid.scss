@@ -78,6 +78,9 @@
   @extend %fix-table;
 }
 
+.grid-row {
+  height: 18px;
+}
 .grid-row:hover {
   background-color: #efefef;
 }
@@ -101,6 +104,10 @@
   background-color: #e3e4e6;
   text-align: center;
   border-bottom-style: solid;
+
+  input {
+    margin: 0;
+  }
 }
 .grid-detail-cell {
   border-right-width: 0;

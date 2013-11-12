@@ -209,6 +209,14 @@ define(function(require, exports, module) {
       var self = this;
       this.data = data;
 
+      function createBlank(len) {
+        var r = [];
+        while (len--) {
+          r.push('');
+        }
+        return r;
+      }
+
       //body
       var records = $.map(data.result, function(record, index) {
         var order = '';
@@ -235,6 +243,16 @@ define(function(require, exports, module) {
           })
         };
       });
+
+      if (records.length < data.pageSize) {
+        for (var i = data.pageSize - records.length; i--;) {
+          records.push({
+            isBlank: true,
+            isAlt: i % 2 === 0,
+            values: createBlank(self.model.fields.length)
+          });
+        }
+      }
 
       var body = Handlebars.compile(require('./body.tpl'))($.extend({}, this.model, {
         records: records
@@ -279,7 +297,7 @@ define(function(require, exports, module) {
         $checkAll.prop('checked', false);
       }
 
-      if (data.totalCount == 0) {
+      if (data.totalCount === 0) {
         this.$('[data-role=num]').val('');
       } else {
         this.$('[data-role=num]').val(data.pageNumber);
@@ -328,7 +346,7 @@ define(function(require, exports, module) {
 
     events: {
       'click .grid-hd': '_sort',
-      'click .grid-row': '_click',
+      'click .grid-row[data-role!=blank]': '_click',
       'click [data-role=check]': '_check',
       'click [data-role=checkAll]': '_checkAll',
 
