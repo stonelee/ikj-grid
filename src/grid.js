@@ -317,7 +317,6 @@ define(function(require, exports, module) {
         this.$('.grid-hd th[data-role=scroll]').css('width', 0);
       }
 
-
       function calIndex(index) {
         if (self.model.needCheckbox) {
           index++;
@@ -341,6 +340,13 @@ define(function(require, exports, module) {
           self.$('tr th:nth-child(' + index + ')').addClass('hidden-phone hidden-tablet');
         }
       });
+
+      //设置最后一个可见列
+      this.$('.grid-view .grid-row').each(function() {
+        //最后一个可见的td
+        $('td:visible:last', this).css('borderRight', 0);
+      });
+
       this.trigger('loaded');
     },
 

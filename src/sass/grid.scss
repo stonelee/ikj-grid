@@ -244,9 +244,11 @@
 .panel-mod {
   width: 100%!important;
 }
-.grid-view .grid-cell:last-child {
-  border-right: 0;
-}
+
+/*使用js实现*/
+/*.grid-view .grid-cell:last-child {*/
+  /*border-right: 0;*/
+/*}*/
 
 /*loading*/
 .loading {

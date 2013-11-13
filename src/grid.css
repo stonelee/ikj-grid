@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* line 3, sass/grid.scss */
 .oneline, .hd, .panel-hd, .grid-hd, .grid-cell {
   overflow: hidden;
@@ -287,13 +288,12 @@
   width: 100%!important;
 }
 
-/* line 247, sass/grid.scss */
-.grid-view .grid-cell:last-child {
-  border-right: 0;
-}
-
+/*使用js实现*/
+/*.grid-view .grid-cell:last-child {*/
+/*border-right: 0;*/
+/*}*/
 /*loading*/
-/* line 252, sass/grid.scss */
+/* line 254, sass/grid.scss */
 .loading {
   position: absolute;
   top: 0;
@@ -304,7 +304,7 @@
   opacity: 0.9;
   z-index: 100;
 }
-/* line 262, sass/grid.scss */
+/* line 264, sass/grid.scss */
 .loading span {
   position: absolute;
   top: 50%;
@@ -319,7 +319,7 @@
   border: 1px solid;
   text-align: center;
 }
-/* line 278, sass/grid.scss */
+/* line 280, sass/grid.scss */
 .loading span i {
   margin-right: 5px;
 }
