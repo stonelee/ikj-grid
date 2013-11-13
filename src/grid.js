@@ -245,10 +245,10 @@ define(function(require, exports, module) {
       });
 
       if (records.length < data.pageSize) {
-        for (var i = data.pageSize - records.length; i--;) {
+        for (var i = records.length; i < data.pageSize; i++) {
           records.push({
             isBlank: true,
-            isAlt: i % 2 === 0,
+            isAlt: i % 2 === 1,
             values: createBlank(self.model.fields.length)
           });
         }
