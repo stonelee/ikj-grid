@@ -341,12 +341,6 @@ define(function(require, exports, module) {
         }
       });
 
-      //设置最后一个可见列
-      this.$('.grid-view .grid-row').each(function() {
-        //最后一个可见的td
-        $('td:visible:last', this).css('borderRight', 0);
-      });
-
       this.trigger('loaded');
     },
 

@@ -29,7 +29,7 @@
     </div>
 
     <div class="grid-bd" style="height:{{height}}px;">
-      <div class="grid-view"{{#unless isLong}} style="_overflow-x:hidden;"{{/unless}}>
+      <div class="grid-view"{{#unless isLong}} style="overflow-x:hidden;"{{/unless}}>
         <table>
           <thead>
             <tr>
