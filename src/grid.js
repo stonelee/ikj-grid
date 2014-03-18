@@ -235,7 +235,7 @@ define(function(require, exports, module) {
             }
 
             if ($.isFunction(field.render)) {
-              value = field.render(value);
+              value = field.render(value, record);
             }
             var f = _.clone(field);
             f.value = value;
